@@ -74,7 +74,9 @@ public class UnityRunner {
             args.add(configuration.getCleanedLogPath());
         }
 
-        args.add(configuration.extraOpts);
+        for (String split : configuration.extraOpts.split(" ")) {
+            args.add(split);
+        }
 
         return args;
     }
@@ -258,5 +260,3 @@ public class UnityRunner {
     }
 
 }
-
-
